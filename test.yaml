@@ -10,7 +10,7 @@ metadata:
     instance: external-workload
     managed-by: kubectl
 spec:
-  replicas: 1
+  # replicas: 1
   selector:
     matchLabels:
       instance: external-workload
