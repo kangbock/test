@@ -55,23 +55,23 @@ spec:
   - port: 80
     targetPort: 80
 ---
-# apiVersion: autoscaling/v2
-# kind: HorizontalPodAutoscaler
-# metadata:
-#   name: hpa-external-workload
-#   namespace: dev
-# spec:
-#   scaleTargetRef:
-#     apiVersion: apps/v1
-#     kind: Deployment
-#     name: external-workload
-#   minReplicas: 1
-#   maxReplicas: 3
-#   metrics:
-#     - type: Resource
-#       resource:
-#         name: cpu
-#         target:
-#           type: Utilization
-#           averageValue: 10
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-external-workload
+  namespace: dev
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: external-workload
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageutilization: 10
  
